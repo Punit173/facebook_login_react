@@ -2,8 +2,31 @@ import React from "react";
 import fbLogo from './assets/facebook.png'
 import SignUp from "./SignUp";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 
 const Login = () => {
+    const [name,setName] = useState('');
+    const [password,setPass] = useState('');
+
+    function update(e){
+        setName(e.target.value);
+    }
+
+    function update1(e){
+        setPass(e.target.value);
+    }
+
+    function check(){
+        const data = localStorage.getItem('Data');
+        if(data.email==name && data.password==password){
+            alert("Login Successful!!");
+        }
+        else{
+            alert("Invalid credentials!!");
+        }
+    }
+
     return(
         <>
         <div style={{
@@ -34,9 +57,9 @@ const Login = () => {
                 placeItems:"center",
                 gap:"10px"
             }}>
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} type="text" placeholder="Email address or phone number" />
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} type="password" placeholder="Password" />
-                <button style={{backgroundColor:"#0866ff",color:"white",width:"23vw",padding:"15px",fontSize:"20px"}}>Log in</button>
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} onChange={update} value={name} type="text" placeholder="Email address or phone number" />
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} type="password" onChange={update1} value={password} placeholder="Password" />
+                <button onClick={check} style={{backgroundColor:"#0866ff",color:"white",width:"23vw",padding:"15px",fontSize:"20px"}}>Log in</button>
                 <span style={{backgroundColor:"white",color:"black",width:"20vw",padding:"15px",borderBottom:"0.25px solid black"}}><a href="">Forgotten password?</a></span>
                 <button style={{backgroundColor:"#42b72a",color:"white",width:"13vw",padding:"15px"}}><Link style={{textDecoration:"none",color:"white"}} to='/signup'>Create new account</Link></button>
 

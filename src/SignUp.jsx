@@ -1,7 +1,45 @@
 import React from "react";
 import fbLogo from './assets/facebook.png'
+import { useState } from "react";
 
 const SignUp = () => {
+
+    const [name,useName] = useState('');
+    const [email,setMail] = useState('');
+    const [password,setPass] = useState('');
+    const [confpassword,setPass1] = useState('');
+
+    function update1(e){
+        useName(e.target.value);    
+    }
+    function update2(e){
+        setMail(e.target.value);
+    }
+    function update3(e){
+        setPass(e.target.value);
+    }
+    function update4(e){
+        setPass1(e.target.value);
+    }
+
+    var obj = {
+        name:name,
+        email:email,
+        password:password,
+        confpassword:confpassword
+    }
+
+    function check(){
+        if(password==confpassword){
+            localStorage.setItem('Data',JSON.stringify(obj));
+            alert('Registered Successfully!!');
+        }
+        else{
+            alert("Password does not match!!");
+        }
+    }
+    
+
     return(
         <>
         <div style={{
@@ -32,11 +70,11 @@ const SignUp = () => {
                 placeItems:"center",
                 gap:"15px"
             }}>
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} type="text" placeholder="Name" />
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} type="text" placeholder="Email address or phone number" />
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} type="password" placeholder="Password" />
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} type="password" placeholder="Confirm Password" />
-                <button style={{backgroundColor:"#0866ff",color:"white",width:"23vw",padding:"15px",fontSize:"20px"}}>Sign Up</button>
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} onChange={update1} value={name} type="text" placeholder="Name" />
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} onChange={update2} value={email} type="email" placeholder="Email address" />
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} onChange={update3} value={password} type="password" placeholder="Password" />
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} onChange={update4} value={confpassword} type="password" placeholder="Confirm Password" />
+                <button onClick={check} style={{backgroundColor:"#0866ff",color:"white",width:"23vw",padding:"15px",fontSize:"20px"}}>Sign Up</button>
 
             </div>
         </div>
