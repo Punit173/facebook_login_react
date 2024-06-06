@@ -1,7 +1,7 @@
 import React from "react";
 import fbLogo from './assets/facebook.png'
 import SignUp from "./SignUp";
-import { Link } from "react-router-dom";
+import { Link, json } from "react-router-dom";
 import { useState } from "react";
 
 
@@ -18,7 +18,9 @@ const Login = () => {
     }
 
     function check(){
-        const data = localStorage.getItem('Data');
+        const data = JSON.parse(localStorage.getItem('Data'));
+        console.log(data.email)
+        console.log(name)
         if(data.email==name && data.password==password){
             alert("Login Successful!!");
         }
