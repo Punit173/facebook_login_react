@@ -70,10 +70,10 @@ const SignUp = () => {
                 placeItems:"center",
                 gap:"15px"
             }}>
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} onChange={update1} value={name} type="text" placeholder="Name" />
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} onChange={update2} value={email} type="email" placeholder="Email address" />
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} onChange={update3} value={password} type="password" placeholder="Password" />
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black"}} onChange={update4} value={confpassword} type="password" placeholder="Confirm Password" />
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black",backgroundColor:"white"}} onChange={update1} value={name} type="text" placeholder="Name" />
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black",backgroundColor:"white"}} onChange={update2} value={email} type="email" placeholder="Email address" />
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black",backgroundColor:"white"}} onChange={update3} value={password} type="password" placeholder="Password" />
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black",backgroundColor:"white"}} onChange={update4} value={confpassword} type="password" placeholder="Confirm Password" />
                 <button onClick={check} style={{backgroundColor:"#0866ff",color:"white",width:"23vw",padding:"15px",fontSize:"20px"}}>Sign Up</button>
 
             </div>

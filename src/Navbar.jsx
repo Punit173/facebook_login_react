@@ -10,8 +10,8 @@ const Navbar = () => {
         <>
             <div style={{display:"flex",width:"100%",placeContent:"center"}}>
                 <img width={50} src={fbLogo} alt="" />
-                <button><Link to='/'>Login</Link></button>
-                <button><Link to='/signup'>SignUp</Link></button>
+                <button style={{backgroundColor:"white"}}><Link to='/'>Login</Link></button>
+                <button style={{backgroundColor:"white"}}><Link to='/signup'>SignUp</Link></button>
             </div>
         </>
     )
