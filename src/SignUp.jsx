@@ -56,7 +56,7 @@ const SignUp = () => {
                 flexDirection:"column"
             }}>
                 <img width={300} src={fbLogo} alt="" />
-                <p>Facebook helps you connect and share with the people in your life.</p>
+                <p style={{color:"black"}}>Facebook helps you connect and share with the people in your life.</p>
             </div>
             <div style={{
                 display:"flex",
