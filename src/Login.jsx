@@ -59,8 +59,8 @@ const Login = () => {
                 placeItems:"center",
                 gap:"10px"
             }}>
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black",backgroundColor:"white"}} onChange={update} value={name} type="text" placeholder="Email address or phone number" />
-                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black",backgroundColor:"white"}} type="password" onChange={update1} value={password} placeholder="Password" />
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black",backgroundColor:"white",color:"black"}} onChange={update} value={name} type="text" placeholder="Email address or phone number" />
+                <input style={{width:"20vw",borderRadius:"5px",padding:"20px",border:"1px solid black",backgroundColor:"white",color:"black"}} type="password" onChange={update1} value={password} placeholder="Password" />
                 <button onClick={check} style={{backgroundColor:"#0866ff",color:"white",width:"23vw",padding:"15px",fontSize:"20px"}}>Log in</button>
                 <span style={{backgroundColor:"white",color:"black",width:"20vw",padding:"15px",borderBottom:"0.25px solid black"}}><a href="">Forgotten password?</a></span>
                 <button style={{backgroundColor:"#42b72a",color:"white",width:"13vw",padding:"15px"}}><Link style={{textDecoration:"none",color:"white"}} to='/signup'>Create new account</Link></button>
